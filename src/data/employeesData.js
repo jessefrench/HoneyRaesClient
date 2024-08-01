@@ -1,10 +1,10 @@
-const _apiUrl = "/api/servicetickets";
+const _apiUrl = "/api/employees";
 
-export const getServiceTickets = () => {
+export const getEmployees = () => {
   return fetch(_apiUrl).then((r) => r.json());
 };
 
-export const getServiceTicketsById = (id) => new Promise((resolve, reject) => {
+export const getEmployeeById = (id) => new Promise((resolve, reject) => {
   fetch(`${_apiUrl}/${id}`, {
     method: 'GET',
     headers: {
