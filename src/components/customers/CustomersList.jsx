@@ -16,7 +16,6 @@ export default function CustomersList() {
         <tr>
           <th>Id</th>
           <th>Name</th>
-          <th>Address</th>
           <th></th>
         </tr>
       </thead>
@@ -25,7 +24,6 @@ export default function CustomersList() {
           <tr key={`customer-${c.id}`}>
             <th scope="row">{c.id}</th>
             <td>{c.name}</td>
-            <td>{c.address}</td>
             <td>
               <Link to={`${c.id}`}>Details</Link>
             </td>
