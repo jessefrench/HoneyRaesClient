@@ -42,7 +42,7 @@ export default function CreateTicket({ ticketObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2>Create Ticket</h2>
+      <h3>Submit a ticket</h3>
 
       {/* CUSTOMER SELECT */}
       <FormGroup>
