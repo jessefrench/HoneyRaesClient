@@ -59,10 +59,23 @@ const completeServiceTicket = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const assignServiceTicket = (id, payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getServiceTickets,
   getServiceTicketsById,
   createServiceTicket,
   deleteServiceTicket,
-  completeServiceTicket
+  completeServiceTicket,
+  assignServiceTicket
 };

@@ -118,7 +118,7 @@ export default function CreateTicket() {
       </FormGroup>
 
       {/* SUBMIT BUTTON */}
-      <Button type="submit">Create Ticket</Button>
+      <Button type="submit">Submit</Button>
     </Form>
   );
 }
