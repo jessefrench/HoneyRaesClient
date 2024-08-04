@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Table } from "reactstrap";
 import { getServiceTicketsById } from "../../data/serviceTicketsData";
 
@@ -32,7 +32,9 @@ export default function TicketDetails() {
         </tr>
         <tr>
           <th scope="row">Employee</th>
-          <td>{ticket.employee?.name || "Unassigned"}</td>
+          <td>{ticket.employee?.name || (
+            <Link to="assign">Assign</Link>
+          )}</td>
         </tr>
         <tr>
           <th scope="row">Completed?</th>
