@@ -28,7 +28,7 @@ export default function TicketDetails() {
         </tr>
         <tr>
           <th scope="row">Emergency</th>
-          <td>{ticket.emergency ? "yes" : "no"}</td>
+          <td>{ticket.emergency ? "Yes" : "No"}</td>
         </tr>
         <tr>
           <th scope="row">Employee</th>

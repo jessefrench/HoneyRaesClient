@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Navbar color="light" expand="md">
         <Nav navbar>
-          <NavbarBrand href="/">Honey Rae's</NavbarBrand>
+          <NavbarBrand>Honey Rae's</NavbarBrand>
           <NavItem>
             <NavLink href="/tickets">Service Tickets</NavLink>
           </NavItem>
