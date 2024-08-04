@@ -16,6 +16,7 @@ import EmployeesList from "./components/employees/EmployeesList";
 import EmployeeDetails from "./components/employees/EmployeeDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <BrowserRouter>
     <Routes>
@@ -35,7 +36,7 @@ root.render(
         </Route>
       </Route>
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,11 +1,7 @@
-const _apiUrl = "/api/customers";
+const endpoint = "/api/customers";
 
-export const getCustomers = () => {
-  return fetch(_apiUrl).then((r) => r.json());
-};
-
-export const getCustomerById = (id) => new Promise((resolve, reject) => {
-  fetch(`${_apiUrl}/${id}`, {
+const getCustomers = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -15,3 +11,17 @@ export const getCustomerById = (id) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
+
+const getCustomerById = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export { getCustomers, getCustomerById };

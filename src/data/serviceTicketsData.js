@@ -1,11 +1,19 @@
-const _apiUrl = "/api/servicetickets";
+const endpoint = "/api/servicetickets";
 
-const getServiceTickets = () => {
-  return fetch(_apiUrl).then((r) => r.json());
-};
+const getServiceTickets = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
 
 const getServiceTicketsById = (id) => new Promise((resolve, reject) => {
-  fetch(`${_apiUrl}/${id}`, {
+  fetch(`${endpoint}/${id}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -17,7 +25,7 @@ const getServiceTicketsById = (id) => new Promise((resolve, reject) => {
 });
 
 const createServiceTicket = (payload) => new Promise((resolve, reject) => {
-  fetch(`${_apiUrl}`, {
+  fetch(`${endpoint}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,22 +37,20 @@ const createServiceTicket = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const updateServiceTicket = (payload) => new Promise((resolve, reject) => {
-  fetch(`${_apiUrl}/${payload.id}.json`, {
-    method: 'PATCH',
+const deleteServiceTicket = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/${id}`, {
+    method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(payload),
   })
-    .then((response) => response.json())
     .then((data) => resolve(data))
     .catch(reject);
 });
 
-const deleteServiceTicket = (id) => new Promise((resolve, reject) => {
-  fetch(`${_apiUrl}/${id}`, {
-    method: 'DELETE',
+const completeServiceTicket = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/${id}/complete`, {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -57,6 +63,6 @@ export {
   getServiceTickets,
   getServiceTicketsById,
   createServiceTicket,
-  updateServiceTicket,
-  deleteServiceTicket
-}
+  deleteServiceTicket,
+  completeServiceTicket
+};
