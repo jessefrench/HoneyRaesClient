@@ -73,7 +73,6 @@ export default function CreateTicket() {
           name="employeeId"
           onChange={handleChange}
           value={formInput.employeeId}
-          required
         >
           <option value="">Select an employee</option>
           {employees.map((employee) => (

@@ -44,7 +44,7 @@ export default function TicketsList() {
           <tr key={`ticket-${t.id}`}>
             <th scope="row">{t.id}</th>
             <td>{t.description}</td>
-            <td>{t.emergency ? "yes" : "no"}</td>
+            <td>{t.emergency ? "Yes" : "No"}</td>
             <td>{t.dateCompleted?.split("T")[0] || "Incomplete"}</td>
             <td>
               <Link to={`${t.id}`}>Details</Link>
