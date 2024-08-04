@@ -13,7 +13,7 @@ const initialState = {
   dateCompleted: null
 };
 
-export default function CreateTicket({ ticketObj }) {
+export default function CreateTicket() {
   const [formInput, setFormInput] = useState(initialState);
   const [customers, setCustomers] = useState([]);
   const [employees, setEmployees] = useState([]);
@@ -122,7 +122,3 @@ export default function CreateTicket({ ticketObj }) {
     </Form>
   );
 }
-
-CreateTicket.defaultProps = {
-  ticketObj: initialState,
-};
